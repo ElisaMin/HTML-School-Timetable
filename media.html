@@ -1,0 +1,109 @@
+<html><head><title>课程表</title><style>
+html{font-size:5vw;}
+body{margin:0}
+.main{margin:1rem auto;width:90%;}
+.hidenday{display:none;margin-bottom: 0.5rem;border-bottom: 1px solid #ddd;}
+.numb{width: 24vw;margin-right:1rem;}
+.NoShit,.card{font-size:.85rem;padding:.5rem;width: 70vw;box-shadow:0 0 3px 0 rgba(0,0,0,.5);background-color:#fff;border-radius:.3rem;margin-bottom:.5rem;min-height:1rem;}
+.time{width: 100%;}
+.place,.name {padding-left: 1rem;font-size: 95%;}
+.header {width: 100%;display: flex;justify-content: center;padding-top: 1rem;padding-bottom: 1rem;}
+.footer {font-size: 0.5rem;padding-left: 1rem;margin-top: 1rem;margin-bottom: 1rem;}
+.tabbar{justify-content:center;display:flex;box-shadow: 0 5px 5px rgba(0,0,0,0.1);color:#999;}
+a.tab{margin:0 0.25rem;padding:0.1rem 0.3rem;text-decoration:none;} a.tab.active {color: #444;border-bottom: 0.1rem solid darkslateblue;}
+</style></head><body>
+<div class="header">课程表</div>
+<div class="tabbar"><a class="tab active" href="media" > 今天课程</a><a class="tab" href="media_all">查看全部</a></div>
+<div class="main">
+    <div class="hidenday" id="1">
+     <div class="numb">周一</div>
+        <div class="time">
+          <div class="card" style="background-color: #00542d;color:#fff;">
+            <div class="icon"><i class="fa fa-html5"></i></div>
+            <div class="CardHeader">08:00-9:50</div>
+            <div class="place">L1-305</div>
+            <div class="name">Web前端开发</div></div>
+          <div class="card" style="background-color: #017792;color:#fff;">
+            <div class="CardHeader">10:00-11:40</div>
+            <div class="place">L1-305</div>
+            <div class="name">三维建模</div></div>
+          <div class="card" style="background-color: #aa0040;color:#fff;">
+            <div class="CardHeader">14:30-16:05</div>
+            <div class="place">T3-404</div>
+            <div class="name">影视动画赏析</div></div>
+          <div class="NoShit">16:15~</div>
+  </div></div>
+     <div class="hidenday" id="2">
+     <div class="numb">周二</div>
+        <div class="time">
+          <div class="card" style="background-color: #017792;color:#fff;">
+		  <div class="CardHeader">08:00-9:50</div>
+            <div class="place">L1-305</div>
+            <div class="name">三维建模</div></div>
+          <div class="card" style="background-color: #cfa115;color:#fff;">
+            <div class="CardHeader">10:00-11:40</div>
+            <div class="place">T3-402</div>
+            <div class="name">插画设计</div></div>
+          <div class="NoShit">11:40~</div>
+ </div></div>
+   <div class="hidenday" id="3">
+     <div class="numb">周三</div>
+        <div class="time">
+          <div class="card" style="background-color: #96007b;color:#fff">
+		  <div class="CardHeader">08:00-9:50</div>
+            <div class="place">T1-203</div>
+            <div class="name">大学英语</div></div>
+          <div class="NoShit">10:00-11:40</div>
+          <div class="card" style="background-color: #017792;color:#fff;">
+            <div class="CardHeader">14:30-16:05</div>
+            <div class="place">T1-203</div>
+            <div class="name">三维建模</div></div>
+          <div class="card" style="background-color: #cfa115;color:#fff;">
+            <div class="CardHeader">16:15-17:50</div>			
+            <div class="place">L1-301</div>
+            <div class="name">插画设计</div></div>
+          <div class="NoShit">17:50~</div>
+ </div></div>
+   <div class="hidenday" id="4">
+     <div class="numb">周四</div>
+        <div class="time">
+          <div class="NoShit">08:00-9:50</div>
+          <div class="NoShit">10:00-11:40</div>
+          <div class="NoShit">14:30-16:05</div>
+          <div class="card" style="background-color: #443622;color:#fff;">
+            <div class="CardHeader">16:15-17:50 双周</div>
+			<div class="place">L1-601 (2-9周)</div>
+            <div class="name">形式与政治</div></div>
+          <div class="NoShit">19:00~</div>
+  </div></div>
+   <div class="hidenday" id="5">
+     <div class="numb">周五</div>
+        <div class="time">
+          <div class="NoShit">08:00-9:50</div>
+          <div class="NoShit">10:00-11:40</div>
+          <div class="card" style="background-color: #aa0040;color:#fff;">
+            <div class="CardHeader">14:30-16:05</div>
+            <div class="place">T3-404</div>
+            <div class="name">影视动画赏析</div></div>
+          <div class="card" style="background-color: #00542d;color:#fff;">
+            <div class="CardHeader">16:15-17:50</div>
+            <div class="place">T1-203</div>
+            <div class="name">Web前端开发</div></div>
+          <div class="NoShit">18:00~</div>
+  </div></div>
+   <div class="hidenday" id="6">  
+     <div class="numb">周六</div>
+        <div class="time"> 
+		  <div class="card" style="background-color: #000;color:#fff">
+            <div class="CardHeader">8:00-11:40</div>
+            <div class="place">L1-302</div>
+            <div class="name">After Effects</div></div>
+			<div class="NoShit">11:40~</div>
+  </div></div>
+ </div>
+<script>
+var d=new Date();var day=d.getDay();
+document.getElementById(day).style.display="flex";
+</script>
+<div class="footer">PowerBy-Heizi·Elisamin</div>
+</body></html>
