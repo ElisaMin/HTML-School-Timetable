@@ -1,26 +1,29 @@
 <html><head><title>课程表</title><style>
-html{font-size:5vw}
+html{font-size:5vw;}
 body{margin:0}
-.main{margin:auto;width:90%;margin-top:1rem}
+.main{margin:1rem auto;width:90%;}
 .day{display:flex;margin-bottom: 0.5rem;border-bottom: 1px solid #ddd;}
+.hidenday{display:none}
 .numb{width: 24vw;margin-right:1rem;}
-.NoShit,.card{font-size:.85rem;padding:.5rem;width: 70vw;box-shadow:0 0 3px 0 rgba(0,0,0,.5);background-color:#fff;border-radius:.3rem;margin-bottom:.5rem;min-height:1rem;}
+.list,.card{font-size:.85rem;padding:.5rem;width: 70vw;box-shadow:0 0 3px 0 rgba(0,0,0,.5);background-color:#fff;border-radius:.3rem;margin-bottom:.5rem;min-height:1rem;}
 .time{width: 100%;}
-.header {width: 100%;display: flex;justify-content: center;padding-top: 1rem;padding-bottom: 1rem;box-shadow: 0 0 5px rgba(0,0,0,0.1);}
-.footer {font-size: 0.5rem;padding-left: 1rem;margin-top: 1rem;}
- @media only screen (min-width:460) and (max-width:2160) { .main{background-color:#fff} }
+.place,.name {padding-left: 1rem;font-size: 95%;}
+.header {width: 100%;display: flex;justify-content: center;padding-top: 1rem;padding-bottom: 1rem;}
+.footer {font-size: 0.5rem;padding-left: 1rem;margin-top: 1rem;margin-bottom: 1rem;}
+.tabbar{justify-content:center;display:flex;box-shadow: 0 5px 5px rgba(0,0,0,0.1);}
+a.tab{margin:0 0.25rem;padding:0.1rem 0.3rem;text-decoration:none;color:#999;} a.tab.active {color: #444;border-bottom: 0.1rem solid darkslateblue;}
 </style></head><body>
 <div class="header">课程表</div>
 <div class="main">
   <div class="day">
      <div class="numb">模板</div>
         <div class="time">
-          <div class="NoShit">08:00-9:50</div>
-          <div class="NoShit">10:00-11:40</div>
-          <div class="NoShit">14:30-16:05</div>
-          <div class="NoShit">16:15-17:50</div>
-          <div class="NoShit">19:00~</div>
-          <div class="card" style="background-color: #96007b;color:#fff">
+          <div class="timelist">08:00-9:50</div>
+          <div class="timelist">10:00-11:40</div>
+          <div class="timelist">14:30-16:05</div>
+          <div class="timelist">16:15-17:50</div>
+          <div class="timelist">19:00~</div>
+          <div class="card" id="class1" >
             <div class="CardHeader">时间</div>
             <div class="place">地址</div>
             <div class="name">课名</div></div>
