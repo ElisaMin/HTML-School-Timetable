@@ -4,15 +4,17 @@ body{margin:0}
 .main{margin:1rem auto;width:90%;}
 .day{display:none;margin-bottom: 0.5rem;border-bottom: 1px solid #ddd;}
 .numb{width: 24vw;margin-right:1rem;}
-.timelist,.card{font-size:.85rem;padding:.5rem;width: 70vw;box-shadow:0 0 3px 0 rgba(0,0,0,.5);background-color:#fff;border-radius:.3rem;margin-bottom:.5rem;min-height:1rem;}
+.timelist,.card{font-size:.85rem;padding:.5rem;width: 70vw;box-shadow:0 0 3px 0 rgba(0,0,0,0.5);background:#fff;border-radius:.3rem;margin-bottom:.5rem;min-height:1rem;}
 .card {color:#fff;}
 .time{width: 100%;}
 .place,.name {padding-left: 1rem;font-size: 95%;}
-.header {width:90%;display: flex;justify-content:space-between;padding:0.5rem 1rem;font-size:1.25rem;}
+.header {width:90%;display: flex;justify-content:space-between;padding:0.5rem 5vw;font-size:1.25rem;}
 .footer {font-size: 0.5rem;padding-left: 1rem;margin-top: 1rem;margin-bottom: 1rem;}
 .tabbar{justify-content:center;display:flex;box-shadow: 0 5px 5px rgba(0,0,0,0.1);}
 a.tab{margin:0 0.25rem;padding:0.1rem 0.3rem;text-decoration:none;color:#999;} a.tab.active {color: #444;border-bottom: 0.1rem solid darkslateblue;}a.tab:hover{background:#eee} 
 a{text-decoration:none;color:#000;}
+.menu{height:100%;width:75%;box-shadow:0 0 16px 0 rgba(0,0,0,0.5);position:absolute;background:#fff;}
+ul{margin: 0 0;}li{list-style: none;}
 </style><script>
   function see_today(){
     for (var i=1;i<7;i++) {
@@ -28,9 +30,22 @@ a{text-decoration:none;color:#000;}
 	  };
 	document.getElementById("see_all").className="tab active";
 	document.getElementById("see_today").className="tab";
-}</script></head><body>
+};function setcolor1(){for (var i=1;i<30;i++){var x="class"+i;document.getElementById(x).style.color="#000";document.getElementById(x).style.background="#fff";};}
+</script></head><body>
+<div class="menu" id="menu" style="display:none">
+ <div class="menuheader">
+  <div class="header">
+  <a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="document.getElementById('menu').style.display='none';" >三</a>
+  <div style="justify-content: center;width: 4rem;"></div>
+  <div style="width: 4rem;"></div></div>
+ </div>
+ <ul class="menubody">
+ <li><a href="javascript:void(0);" onclick="setcolor1();">设置为纯白色</a></li>
+ </ul>
+ <div class="menufooter"></div>
+</div>
 <div class="header">
- <a style="justify-content: flex-end;width: 4rem;" href="javascript:void(0);" onclick="window.alert('未完善');" >三</a>
+ <a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="document.getElementById('menu').style.display='block';"" >三</a>
  <div style="justify-content: center;width: 4rem;">课程表</div>
  <div style="width: 4rem;"></div>
 </div>
