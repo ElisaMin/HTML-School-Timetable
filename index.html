@@ -13,8 +13,10 @@ body{margin:0}
 .tabbar{justify-content:center;display:flex;box-shadow: 0 5px 5px rgba(0,0,0,0.1);}
 a.tab{margin:0 0.25rem;padding:0.1rem 0.3rem;text-decoration:none;color:#999;} a.tab.active {color: #444;border-bottom: 0.1rem solid darkslateblue;}a.tab:hover{background:#eee} 
 a{text-decoration:none;color:#000;}
-.menu{height:100%;width:75%;box-shadow:0 0 16px 0 rgba(0,0,0,0.5);position:absolute;background:#fff;}
-ul{margin: 0 0;}li{list-style: none;}
+.menufooter{margin: auto auto 0 auto;}.menumain{height:100%;width:100%;position:absolute;} .menu{height:100%;width:75%;box-shadow:0 0 16px 0 rgba(0,0,0,0.5);background:#fff;}.menuheader{padding:0.5rem;display:flex;}
+ul{margin:0.25rem 0 0 0;padding:0;border-top: 1px solid #ddd;}
+.ml,.ml.active{list-style:none;margin: 0.1rem 0.1rem 0.1rem 0;padding: 0.25rem 0 0.25rem 3.25rem;font-size:0.9rem;}
+.ml.active{background:#e3effb;border-radius: 0 30rem 30rem 0;}
 </style><script>
   function see_today(){
     for (var i=1;i<7;i++) {
@@ -30,24 +32,37 @@ ul{margin: 0 0;}li{list-style: none;}
 	  };
 	document.getElementById("see_all").className="tab active";
 	document.getElementById("see_today").className="tab";
-};function setcolor1(){for (var i=1;i<30;i++){var x="class"+i;document.getElementById(x).style.color="#000";document.getElementById(x).style.background="#fff";};}
+};</script><!--颜色配置--><script>
+function setcolor1() {
+for (var i=1;i<3/*菜单列表数量*/;i++){var x="mc"+i;console.log(x);document.getElementById(x).className="ml";};document.getElementById("mc1").className="ml active";
+for (var i=1;i<3/*课程数量*/;i++){var x="class"+i;console.log(x);document.getElementById(x).style.color="#000";document.getElementById(x).style.background="#fff";};
+};function setcolor2() {
+for (var i=1;i<3/*菜单列表数量*/;i++){var x="mc"+i;console.log(x);document.getElementById(x).className="ml";};document.getElementById("mc2").className="ml active";
+for (var i=1;i<3/*课程数量*/;i++){var x="class"+i;console.log(x);document.getElementById(x).style.color="#000";document.getElementById(x).style.background="#fff";};
+}
 </script></head><body>
-<div class="menu" id="menu" style="display:none">
- <div class="menuheader">
-  <div class="header">
-  <a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="document.getElementById('menu').style.display='none';" >三</a>
-  <div style="justify-content: center;width: 4rem;"></div>
-  <div style="width: 4rem;"></div></div>
- </div>
- <ul class="menubody">
- <li><a href="javascript:void(0);" onclick="setcolor1();">设置为纯白色</a></li>
- </ul>
- <div class="menufooter"></div>
+<div class="menumain" id="menu" style="display:none" href="javascript:void(0);" onclick="document.getElementById('menu').style.display='none';"  >
+	<div class="menu" >
+		<div class="menuheader">
+			<div style="height:1.5rem;width: 1.5rem;border-radius:50%;background: #005CC5;color: #fff;font-size:0.75rem;display: flex;box-shadow: 0 3px 4px 0 rgba(0,0,0,0.3);margin: auto 0.5rem;">
+				<div style="margin:auto;">模</div></div>
+				
+			<div style="font-size:1.25rem;">课程表</div>
+		
+		</div>
+			<ul class="menubody">
+				<li id="mc1" class="ml"><a href="javascript:void(0);" onclick="setcolor1();">设置为纯白色</a></li>
+				<li id="mc2" class="ml"><a href="javascript:void(0);" onclick="setcolor2();">Test</a></li>
+			</ul>
+		<div class="menufooter" style="display:none;">
+			<a href="https://github.com/ElisaMin/HTML-School-Timetable">在Github上修改此页面</a>
+		</div>
+	</div>
 </div>
 <div class="header">
- <a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="document.getElementById('menu').style.display='block';"" >三</a>
+ <a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="document.getElementById('menu').style.display='block';" >三</a>
  <div style="justify-content: center;width: 4rem;">课程表</div>
- <div style="width: 4rem;"></div>
+ <div style="width: 2rem;"></div>
 </div>
 <div class="tabbar">
  <a class="tab active" id="see_today" href="javascript:void(0);" onclick="see_today();">今天课程</a>
@@ -74,9 +89,11 @@ ul{margin: 0 0;}li{list-style: none;}
 		   <div class="CardHeader">信息1</div>
             <div class="place">信息2</div>
             <div class="name">信息3</div></div>
+		  <div class="card" id="class2" >test</div>
           <div class="timelist">信息1</div>
   </div></div>
  </div>
  <div class="footer">PowerBy-Heizi·Elisamin</div><footer><script>var d=new Date();var day=d.getDay();document.getElementById(day).style.display="flex";</script><script>
 document.getElementById("class1").style.background="cadetblue";
+document.getElementById("class2").style.background="mediumvioletred";
 </script><!--这是卡的改色的脚本部分，"lightgray"可以改成任意你喜欢的颜色。--></footer></body></html>
