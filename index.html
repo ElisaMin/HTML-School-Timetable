@@ -1,4 +1,7 @@
-<html><head><title>课程表</title><style>
+<html><head><title>课程表</title><style><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	html{font-size:5vw;}
+	.body{width:100%;}
+	.header{width:90%;}
  body{margin:0}
 .head{box-shadow: 0 5px 5px rgba(0,0,0,0.1);position:sticky;top:0;background: rgba(255,255,255,0.95);}
 .body{margin:auto;} .main{padding:1rem;margin:0;}
@@ -17,12 +20,12 @@ a{text-decoration:none;color:#000;}
 ul{margin:0.25rem 0 0 0;padding:0;border-top: 1px solid #ddd;}
 .ml,.ml.active{list-style:none;margin: 0.1rem 0.1rem 0.1rem 0;padding: 0.25rem 0 0.25rem 3.25rem;font-size:0.9rem;}
 .ml.active{background:#e3effb;border-radius: 0 30rem 30rem 0;}
-@media (min-width:0px) and (max-width:799px){
+@media (min-width:0px) and (max-width:1200px){
 	html{font-size:5vw;}
 	.body{width:100%;}
 	.header{width:90%;}
 }
-@media (min-width:800px) and (max-width:9999px) {
+@media (min-width:1200px) and (max-width:9999px) {
 	html{font-size:24px;}
 	.body{width:800px;}
 	.header{width:800px;}
@@ -42,12 +45,36 @@ ul{margin:0.25rem 0 0 0;padding:0;border-top: 1px solid #ddd;}
 	  };
 	document.getElementById("see_all").className="tab active";
 	document.getElementById("see_today").className="tab";
+};function see_menu(){
+	document.getElementById('menu').style.display='block';
+	var x=document.getElementsByClassName("head");
+		for (var i=0;i<x.length;i++){
+			x[i].style.background="#fff";x[i].style.position="static";
+		};
+};function off_menu(){
+	document.getElementById('menu').style.display='none';
+	var x=document.getElementsByClassName("head");
+		for (var i=0;i<x.length;i++){
+			x[i].style.background="#fff";x[i].style.position="sticky";
+		};
 };
 </script>
 <!--颜色配置-->
 <script>
 var mq="3"/*菜单列表数量+1*/,cq="3"/*科目数量+1*/;
-function setcolor0(){
+function setstyle(){
+};function getCookie(cname) {var name = cname + "=";var ca = document.cookie.split(';');for(var i = 0; i < ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name)  == 0) {return c.substring(name.length, c.length);}}return "";
+};function setstyle(){
+/*var color=getCookie("color");
+	for (var i=1;i<cq;i++){
+		console.log(color);
+		if (color=="color"+i){
+			var do ;
+			do = setcolor+i+"()";
+			console.log(do);
+			}
+	}; */
+};function setcolor0(){
 	var manuid="0";
 /*菜单变换*/
 	for (var i=0;i<mq;i++){
@@ -69,10 +96,11 @@ function setcolor0(){
 	var x=document.getElementsByClassName("card");
 	for (var i=0;i<x.length;i++){
 		x[i].style.color="#fff";
-		};
+		};var s=getCookie("color");
+	setstyle();
 };
 function setcolor1() {
-	var manuid="1";
+	var manuid="1";document.cookie="color=color1";
 /*菜单变换*/
 	for (var i=0;i<mq;i++){
 		var x="mc"+i;
@@ -91,10 +119,13 @@ function setcolor1() {
 	var x=document.getElementsByClassName("timelist");
 	for (var i=0;i<x.length;i++){
 		x[i].style.background="#fff";x[i].style.color="#000";
+		};	var x=document.getElementsByClassName("card");
+	for (var i=0;i<x.length;i++){
+		x[i].style.color="#000";
 		};
 };
 function setcolor2() {
-	var manuid="2";
+	var manuid="2";document.cookie="color=color2";
 	for (var i=0;i<mq;i++){
 		var x="mc"+i;
 		console.log(x);
@@ -111,9 +142,9 @@ function setcolor2() {
 		for (var i=0;i<x.length;i++){
 			x[i].style.background="#000";x[i].style.color="#fff";
 		};
-}
+};
 </script></head><body>
-<div class="menumain" id="menu" style="display:none" href="javascript:void(0);" onclick="document.getElementById('menu').style.display='none';"  >
+<div class="menumain" id="menu" style="display:none" href="javascript:void(0);" onclick="off_menu();"  >
 	<div class="menu" >
 		<div class="menuheader">
 			<div style="height:1.5rem;width: 1.5rem;border-radius:50%;background: #005CC5;color: #fff;font-size:0.75rem;display: flex;box-shadow: 0 3px 4px 0 rgba(0,0,0,0.3);margin: auto 0.5rem;">
@@ -133,7 +164,7 @@ function setcolor2() {
 
 <div class="head">
  <div class="header">
-	<a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="document.getElementById('menu').style.display='block';" >三</a>
+	<a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="see_menu();" >三</a>
  <div style="justify-content: center;width: 4rem;">课程表</div>
  <div style="width: 2rem;"></div>
 </div>
