@@ -1,7 +1,7 @@
 <!DOCTYPE html><html><head><title>课程表</title><style><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 html{font-size:5vw;}
  body{width:100%;margin:0}
-  .menuanimation,.menumain{height:100%;width:100%;position:absolute;}
+  .menumain{height:100%;width:100%;position:absolute;}
    .menu{height:100%;width:75%;box-shadow:0 0 16px 0 rgba(0,0,0,0.5);background:#fff;}
     .menuheader{padding:0.5rem;display:flex;}
 	 .ml,.ml.active{list-style:none;margin: 0.1rem 0.1rem 0.1rem 0;padding: 0.25rem 0 0.25rem 3.25rem;font-size:0.9rem;}
@@ -12,7 +12,7 @@ html{font-size:5vw;}
     a.menubtn:active{/*animation: openmenu 0.5s;*/}
    .tabbar{justify-content:center;display:flex;}
     a.tab{margin:0 0.25rem;padding:0.1rem 0.3rem;text-decoration:none;color:#999;} 
-	a.tab.active {color: #444;border-bottom: 0.1rem solid darkslateblue;}
+	a.tab.active {color: #444;border-bottom: 0.1rem solid #0e41b1;}
 	a.tab:hover{background:#eee}
   .body{margin:auto;}
    .main{padding:1rem;margin:0;}
@@ -25,10 +25,8 @@ html{font-size:5vw;}
   .footer{font-size: 0.5rem;padding-left: 1rem;margin-top: 1rem;margin-bottom: 1rem;}
 a{text-decoration:none;color:#000;} 
 ul{margin:0.25rem 0 0 0;padding:0;border-top: 1px solid #ddd;}
-div.menumain:active{animation: closemenu 0.25s;}
-div.menuanimation:active{animation: openmenu 0.25s;}
 @keyframes closemenu{ from{left:-100vw;} to{left:0vw} }
-@keyframes openmenu { from {left:0vw;} to {left:-100vw;}}
+@keyframes openmenu { from {left:0vw;} to {left:-100vw;} }
 @media (min-width:0px) and (max-width:1200px){
 	html{font-size:5vw;}
 	.body{width:100%;}
@@ -40,7 +38,7 @@ div.menuanimation:active{animation: openmenu 0.25s;}
 	.header{width:800px;}
 	}
 </style><script>
-var SetDivState=
+//var SetDivState=
 </script><script>
   function see_today(){
     for (var i=1;i<7;i++) {
@@ -154,8 +152,7 @@ function setcolor2() {
 		};
 };
 </script></head><body>
-<div class="menuanimation" href="javascript:void(0);" onclick="off_menu();" >
-<div class="menumain" id="menu" style="display:none"  >
+<div class="menumain" id="menu" style="display:none" href="javascript:void(0);" onclick="off_menu();"  >
 	<div class="menu" >
 		<div class="menuheader">
 			<div style="height:1.5rem;width: 1.5rem;border-radius:50%;background: #005CC5;color: #fff;font-size:0.75rem;display: flex;box-shadow: 0 3px 4px 0 rgba(0,0,0,0.3);margin: auto 0.5rem;">
@@ -184,7 +181,11 @@ function setcolor2() {
  <a class="tab" href="javascript:void(0);" onclick="see_all();" id="see_all">查看全部</a>
 </div>
 </div>
+
 <div class="body">
+<!--<div class="main">
+ <div style="font-size: 0.75rem;">今天是雷阵雨，记得带伞哦。</div>
+</div>-->
 <div class="main">
   <div class="day" id="0"></div>
   <div class="day" id="1"></div>
@@ -209,6 +210,6 @@ function setcolor2() {
 		  <div class="card" id="class2" >test</div>
           <div class="timelist">信息1</div>
   </div></div>
- </div></dir>
+ </div></div>
  <div class="footer">PowerBy-Heizi·Elisamin</div>
  <footer><script>var d=new Date();var day=d.getDay();console.log("Today's "+day);document.getElementById(day).style.display="flex";setcolor0();</script></body></footer></html>
