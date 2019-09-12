@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="js/color.js"></script>
+		<script src="js/see_btn.js"></script>
+		<title>又一个测试模板</title>
+	</head>
+	<body>
+		<div class="menumain" id="menu" style="display:none" href="javascript:void(0);" onclick="off_menu();"  >
+			<div class="menu" >
+				<div class="menuheader">
+					<div style="height:1.5rem;width: 1.5rem;border-radius:50%;background: #005CC5;color: #fff;font-size:0.75rem;display: flex;box-shadow: 0 3px 4px 0 rgba(0,0,0,0.3);margin: auto 0.5rem;">
+						<div style="margin:auto;">模</div></div>
+					<div style="font-size:1.25rem;">课程表</div>
+				</div>
+					<ul class="menubody">
+						<li id="mc0" class="ml"><a href="javascript:void(0);" onclick="setcolor0();">花里胡哨</a></li>
+						<li id="mc1" class="ml"><a href="javascript:void(0);" onclick="setcolor1();">只是白</a></li>
+						<li id="mc2" class="ml"><a href="javascript:void(0);" onclick="setcolor2();">特别黑</a></li>
+					</ul>
+				<div class="menufooter" style="display:none;">
+					<a href="https://github.com/ElisaMin/HTML-School-Timetable">在Github上修改此页面</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="head">
+		<div class="header">
+			<a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="see_menu();" class="menubtn">三</a>
+		<div style="justify-content: center;width: 4rem;">课程表</div>
+		<div style="width: 2rem;"></div>
+		</div>
+		<div class="tabbar">
+			<a class="tab active" id="see_today" href="javascript:void(0);" onclick="see_today();">今天课程</a>
+			<a class="tab" href="javascript:void(0);" onclick="see_all();" id="see_all">查看全部</a>
+		</div>
+	</div>
+
+	<div class="body">
+		<div class="week">
+		<div class="day" id="1">
+			<div class="dayleft">周一</div>
+			<div class="dayright">
+				<div id="1.1" class="info" >08:00-09:50 第一节 无课</div>
+				<div id="1.2" class="info" >10:00-11:40 第二节 无课</div>
+				<div id="1.3" class="info" >14:30-16:05 第三节 无课</div>
+				<div id="1.4" class="info" >16:15-17:50 第四节 无课</div>
+				<div id="1.5" class="info" >16:15-17:50 第五节 无课</div>
+			</div>
+		</div>
+		<div class="day" id="2">
+			<div class="dayleft">周二</div>
+			<div class="dayright">
+				<div id="2.1" class="info" >08:00-09:50 第一节 无课</div>
+				<div id="2.2" class="info" >10:00-11:40 第二节 无课</div>
+				<div id="2.3" class="info" >14:30-16:05 第三节 无课</div>
+				<div id="2.4" class="info" >16:15-17:50 第四节 无课</div>
+				<div id="2.5" class="info" >16:15-17:50 第五节 无课</div>
+			</div>
+		</div>
+		<div class="day" id="3">
+			<div class="dayleft">周三</div>
+			<div class="dayright">
+				<div id="3.1" class="info" >08:00-09:50 第一节 无课</div>
+				<div id="3.2" class="info" >10:00-11:40 第二节 无课</div>
+				<div id="3.3" class="info" >14:30-16:05 第三节 无课</div>
+				<div id="3.4" class="info" >16:15-17:50 第四节 无课</div>
+				<div id="3.5" class="info" >16:15-17:50 第五节 无课</div>
+			</div>
+		</div>
+		<div class="day" id="4">
+			<div class="dayleft">周四</div>
+			<div class="dayright">
+				<div id="4.1" class="info" >08:00-09:50 第一节 无课</div>
+				<div id="4.2" class="info" >10:00-11:40 第二节 无课</div>
+				<div id="4.3" class="info" >14:30-16:05 第三节 无课</div>
+				<div id="4.4" class="info" >16:15-17:50 第四节 无课</div>
+				<div id="4.5" class="info" >16:15-17:50 第五节 无课</div>
+			</div>
+		</div>
+		<div class="day" id="5">
+			<div class="dayleft">周五</div>
+			<div class="dayright">
+				<div id="5.1" class="info" >08:00-09:50 第一节 无课</div>
+				<div id="5.2" class="info" >10:00-11:40 第二节 无课</div>
+				<div id="5.3" class="info" >14:30-16:05 第三节 无课</div>
+				<div id="5.4" class="info" >16:15-17:50 第四节 无课</div>
+				<div id="5.5" class="info" >16:15-17:50 第五节 无课</div>
+			</div>
+		</div>
+		<div class="day" id="6">
+			<div class="dayleft">周六</div>
+			<div class="dayright">
+				<div class="info">无课</div>
+			</div>
+		</div>
+<!--示例-->
+		<div class="day" id="0">
+			<div class="dayleft">周日</div>
+			<div class="dayright">
+				<div class="info">无课</div>
+			</div>
+		</div>
+<!--
+		  <div class="day" id="8" style="display:flex !important;"> 这里的id="X"是指这是星期X。
+		    <div class="dayleft">周八</div> 建议在两个字之内
+		        <div class="dayright">
+		          <div class="info">信息1</div>信息1可以是时间
+				  <div class="infos" id="class1" >
+				  class1代表第一个课程，如果周一和周四都有同一节课的话请把classX代入进ID。
+				   <div class="inhead">信息1</div>
+		            <div class="intext">信息2</div>
+		            <div class="intext">信息3</div></div>
+				  <div class="infos" id="class2" >test</div>
+		          <div class="info">信息1</div>
+		  </div></div>-->
+		</div>
+	</div>
+		<!-- 天气插件 -->
+		<script type="text/javascript">
+		WIDGET = {FID: '4qEVkcIjQW'}
+		</script>
+		<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+		 <footer><script>var d=new Date();var day=d.getDay();console.log("Today's "+day);document.getElementById(day).style.display="flex";setcolor0();</script>
+	</body>
+</html>
