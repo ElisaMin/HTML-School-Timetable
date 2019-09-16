@@ -70,10 +70,10 @@ ul{margin:0.25rem 0 0 0;padding:0;border-top: 1px solid #ddd;}
 <script>
 var mq="3"/*菜单列表数量+1*/,cq="3"/*科目数量+1*/;
 function getCookie(cname) {var name = cname + "=";var ca = document.cookie.split(';');for(var i = 0; i < ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name)  == 0) {return c.substring(name.length, c.length);}}return "";
-};function setstyle(){
-	if (getCookie(color=1);){
-		setcolor1();
-	} else if (getCookie(color=2);{
+};var cs=getCookie("color");function setstyle(){
+	if (cs==1){
+		setcolor1()
+	} else if (cs==2){
 		setcolor2();
 	} else {
 		setcolor0
@@ -156,7 +156,7 @@ function setcolor2() {
 			<div style="font-size:1.25rem;">课程表</div>
 		</div>
 			<ul class="menubody">
-				<li id="mc0" class="ml"><a href="javascript:void(0);document.cookie='color=0';" onclick="setcolor0();">花里胡哨</a></li>
+				<li id="mc0" class="ml"><a href="javascript:void(0);" onclick="setcolor0();document.cookie='color=0';">花里胡哨</a></li>
 				<li id="mc1" class="ml"><a href="javascript:void(0);" onclick="setcolor1();">只是白</a></li>
 				<li id="mc2" class="ml"><a href="javascript:void(0);" onclick="setcolor2();">特别黑</a></li>
 			</ul>
@@ -214,4 +214,4 @@ function setcolor2() {
 WIDGET = {FID: '4qEVkcIjQW'}
 </script>
 <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
- <footer><script>var d=new Date();var day=d.getDay();console.log("Today's "+day);document.getElementById(day).style.display="flex";setstyle();</script></body></footer></html>
+ <footer><script>var d=new Date();var day=d.getDay();console.log("Today's "+day);document.getElementById(day).style.display="flex";setcolor0();</script></body></footer></html>
