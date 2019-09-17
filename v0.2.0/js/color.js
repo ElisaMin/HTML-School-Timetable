@@ -20,11 +20,11 @@ function getCookie(cname) {var name = cname + "=";var ca = document.cookie.split
 	};
 	var menuid="mc"+manuid;
 	document.getElementById(menuid).className="ml active";
-/*科目颜色*/
-	/*这是卡的改色的脚本部分，"lightgray"可以改成任意你喜欢的颜色。*/
+//科目颜色
+	//这是卡的改色的脚本部分，"lightgray"可以改成任意你喜欢的颜色。
 	document.getElementById("class1").style.background="cadetblue";
-	document.getElementById("class2").style.background="mediumvioletred";
-/*其他颜色*/
+	//document.getElementById("class2").style.background="mediumvioletred";
+	//其他颜色
 	var x=document.getElementsByClassName("timelist");
 	for (var i=0;i<x.length;i++){
 		x[i].style.background="#fff";x[i].style.color="#000";
@@ -37,7 +37,7 @@ function getCookie(cname) {var name = cname + "=";var ca = document.cookie.split
 };
 function setcolor1() {
 	var manuid="1";document.cookie="color=color1";
-/*菜单变换*/
+//菜单变换
 	for (var i=0;i<mq;i++){
 		var x="mc"+i;
 		console.log(x);
@@ -45,13 +45,13 @@ function setcolor1() {
 	};
 	var menuid="mc"+manuid;
 	document.getElementById(menuid).className="ml active";
-/*科目颜色*/
+//科目颜色
 	for (var i=1;i<cq;i++){
 		var x="class"+i;console.log(x);
 		document.getElementById(x).style.color="#000";
 		document.getElementById(x).style.background="#fff";
 		};
-/*其他颜色*/
+//其他颜色
 	var x=document.getElementsByClassName("timelist");
 	for (var i=0;i<x.length;i++){
 		x[i].style.background="#fff";x[i].style.color="#000";
