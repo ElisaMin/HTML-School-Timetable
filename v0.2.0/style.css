@@ -18,8 +18,7 @@ html{font-size:5vw;font-family:sans-serif;}
     .day{display:none;margin-bottom: 0.5rem;border-bottom: 1px solid #ddd;}
 	 .dayleft{width: 3rem;margin-right:1rem;}
 	 .dayright{width: 100%;}
-	  .info,.infos{font-size:.85rem;padding:.5rem;box-shadow:0 0 3px 0 rgba(0,0,0,0.5);background:#fff;border-radius:.3rem;margin-bottom:.5rem;min-height:1rem;}
-	   .infos {color:#fff;}
+	  .info{font-size:.85rem;padding:.5rem;box-shadow:0 0 3px 0 rgba(0,0,0,0.5);background:#fff;border-radius:.3rem;margin-bottom:.5rem;min-height:1rem;}
 	    .intext {padding-left: 1rem;font-size: 95%;}
   .footer{font-size: 0.5rem;padding-left: 1rem;margin-top: 1rem;margin-bottom: 1rem;}
 a{text-decoration:none;color:#000;} 
