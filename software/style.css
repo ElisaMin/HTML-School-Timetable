@@ -35,5 +35,5 @@ ul{margin:0.25rem 0 0 0;padding:0;border-top: 1px solid #ddd;}
 	.body{width:800px;}
 	.header{width:800px;}
 	}
-div#weather-float-he {position: fixed !important;width: 4rem !important;}
+div#weather-float-he {position: fixed !important;width: auto !important;}
 .info.a{background:darkgreen;}.info.b{background:cadetblue;}.info.c{background:darkmagenta;}.info.d{background: palevioletred;}.info.e{background:saddlebrown;}.info.f{background: #cfa115;}
