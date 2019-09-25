@@ -11,7 +11,9 @@ l("5","2","e","思想道德修养与法律基础","L1-602");
 l("1","4","f","形式与政治","L1-601（单周）");
 
 function l(c,t,n,clsname,intext){
-	var id="info"+c+t,clsid="info "+n;var elm=document.getElementById(id);if (t=="1"){var time="08:00-09:50 ";} else if (t=="2"){var time="10:00-11:40 ";} else if (t=="3"){var time="14:30-16:05 ";} else if (t=="4"){var time="16:15-17:50 ";} else if (t=="5"){var time="18:00~ ";}  else {var time="~ ";};
+	var id="info"+c+t,clsid="info "+n;var elm=document.getElementById(id);
+	switch (t){ case 1: time="08:00-09:50 "; break; case 2: time="10:00-11:40 ";break;case 3 : time="14:30-16:05 ";break; case 4 :time="16:15-17:50 "; break; case 5:time="18:00~ ";break;default: time="~ ";};
+	//if (t=="1"){var time="08:00-09:50 ";} else if (t=="2"){var time="10:00-11:40 ";} else if (t=="3"){var time="14:30-16:05 ";} else if (t=="4"){var time="16:15-17:50 ";} else if (t=="5"){var time="18:00~ ";}  else {var time="~ ";};
 	elm.innerHTML=time+"<div class='intext'>"+clsname+"</div>"+"<div class='intext'>"+intext+"</div>";
 	elm.className=clsid;elm.style.color="#fff";//elm.style.display="block"
 };
