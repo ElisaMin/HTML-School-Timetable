@@ -24,7 +24,7 @@ function l(c,t,n,clsname,intext){
 	elm.className=clsid;elm.style.color="#fff";//elm.style.display="block"
 };
 
-o("1","5");o("2","2");o("3","3");o("4","3");o("5","5");
+o("1","5");o("2","5");o("3","5");o("4","5");o("5","5");
 function o(c,t,){
 	for (var i=t;i<6;i++){
 		console.log(i);var id="info"+c+i;var elm=document.getElementById(id);
