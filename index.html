@@ -1,0 +1,217 @@
+<!DOCTYPE html><html><head><title>课程表</title><style><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+html{font-size:5vw;font-family:sans-serif;}
+ body{width:100%;margin:0}
+  .menumain{height:100%;width:100%;position:absolute;}
+   .menu{height:100%;width:75%;box-shadow:0 0 16px 0 rgba(0,0,0,0.5);background:#fff;}
+    .menuheader{padding:0.5rem;display:flex;}
+	 .ml,.ml.active{list-style:none;margin: 0.1rem 0.1rem 0.1rem 0;padding: 0.25rem 0 0.25rem 3.25rem;font-size:0.9rem;}
+	 .ml.active{background:#e3effb;border-radius: 0 30rem 30rem 0;}
+    .menufooter{margin: auto auto 0 auto;}
+  .head{box-shadow: 0 5px 5px rgba(0,0,0,0.1);position:sticky;top:0;background: rgba(255,255,255,0.95);}
+   .header {width:90%;display: flex;justify-content:space-between;padding:0.5rem 5vw;font-size:1.25rem;margin:0 auto;}
+    a.menubtn:active{/*animation: openmenu 0.5s;*/}
+   .tabbar{justify-content:center;display:flex;}
+    a.tab{margin:0 0.25rem;padding:0.1rem 0.3rem;text-decoration:none;color:#999;} 
+	a.tab.active {color: #444;border-bottom: 0.1rem solid #0e41b1;}
+	a.tab:hover{background:#eee}
+  .body{margin:auto;}
+   .main{padding:1rem;margin:0;}
+    .day{display:none;margin-bottom: 0.5rem;border-bottom: 1px solid #ddd;}
+	 .numb{width: 3rem;margin-right:1rem;}
+	 .time{width: 100%;}
+	  .timelist,.card{font-size:.85rem;padding:.5rem;box-shadow:0 0 3px 0 rgba(0,0,0,0.5);background:#fff;border-radius:.3rem;margin-bottom:.5rem;min-height:1rem;}
+	  .card {color:#fff;}
+	  .place,.name {padding-left: 1rem;font-size: 95%;}
+  .footer{font-size: 0.5rem;padding-left: 1rem;margin-top: 1rem;margin-bottom: 1rem;}
+a{text-decoration:none;color:#000;} 
+ul{margin:0.25rem 0 0 0;padding:0;border-top: 1px solid #ddd;}
+@keyframes closemenu{ from{left:-100vw;} to{left:0vw} }
+@keyframes openmenu { from {left:0vw;} to {left:-100vw;} }
+@media (min-width:0px) and (max-width:1200px){
+	html{font-size:5vw;}
+	.body{width:100%;}
+	.header{width:90%;}
+}
+@media (min-width:1200px) and (max-width:9999px) {
+	html{font-size:24px;}
+	.body{width:800px;}
+	.header{width:800px;}
+	}
+</style><script>
+  function see_today(){
+    for (var i=1;i<7;i++) {
+	  document.getElementById(i).style.display="none";
+	  };
+	document.getElementById("see_all").className="tab";
+	document.getElementById("see_today").className="tab active";
+	var d=new Date();var day=d.getDay();
+    document.getElementById(day).style.display="flex";
+};function see_all(){
+    for (var i=1;i<7;i++) {
+	  document.getElementById(i).style.display="flex";
+	  };
+	document.getElementById("see_all").className="tab active";
+	document.getElementById("see_today").className="tab";
+};function see_menu(){
+	document.getElementById('menu').style.display='block';
+	var x=document.getElementsByClassName("head");
+		for (var i=0;i<x.length;i++){
+			x[i].style.background="#fff";x[i].style.position="static";
+		};
+};function off_menu(){
+	document.getElementById('menu').style.display='none';
+	var x=document.getElementsByClassName("head");
+		for (var i=0;i<x.length;i++){
+			x[i].style.background="#fff";x[i].style.position="sticky";
+		};
+};
+</script>
+<!--颜色配置-->
+<script>
+var mq="3"/*菜单列表数量+1*/,cq="3"/*科目数量+1*/;
+function getCookie(cname) {var name = cname + "=";var ca = document.cookie.split(';');for(var i = 0; i < ca.length; i++) {var c = ca[i];while (c.charAt(0) == ' ') {c = c.substring(1);}if (c.indexOf(name)  == 0) {return c.substring(name.length, c.length);}}return "";
+};var cs=getCookie("color");function setstyle(){
+	if (cs==1){
+		setcolor1()
+	} else if (cs==2){
+		setcolor2();
+	} else {
+		setcolor0
+	};
+};function setcolor0(){
+	var manuid="0";
+/*菜单变换*/
+	for (var i=0;i<mq;i++){
+		var x="mc"+i;
+		console.log(x);
+		document.getElementById(x).className="ml";
+	};
+	var menuid="mc"+manuid;
+	document.getElementById(menuid).className="ml active";
+/*科目颜色*/
+	/*这是卡的改色的脚本部分，"lightgray"可以改成任意你喜欢的颜色。*/
+	document.getElementById("class1").style.background="cadetblue";
+	document.getElementById("class2").style.background="mediumvioletred";
+/*其他颜色*/
+	var x=document.getElementsByClassName("timelist");
+	for (var i=0;i<x.length;i++){
+		x[i].style.background="#fff";x[i].style.color="#000";
+		};
+	var x=document.getElementsByClassName("card");
+	for (var i=0;i<x.length;i++){
+		x[i].style.color="#fff";
+		};var s=getCookie("color");
+	setstyle();
+};
+function setcolor1() {
+	var manuid="1";document.cookie="color=1";
+/*菜单变换*/
+	for (var i=0;i<mq;i++){
+		var x="mc"+i;
+		console.log(x);
+		document.getElementById(x).className="ml";
+	};
+	var menuid="mc"+manuid;
+	document.getElementById(menuid).className="ml active";
+/*科目颜色*/
+	for (var i=1;i<cq;i++){
+		var x="class"+i;console.log(x);
+		document.getElementById(x).style.color="#000";
+		document.getElementById(x).style.background="#fff";
+		};
+/*其他颜色*/
+	var x=document.getElementsByClassName("timelist");
+	for (var i=0;i<x.length;i++){
+		x[i].style.background="#fff";x[i].style.color="#000";
+		};	var x=document.getElementsByClassName("card");
+	for (var i=0;i<x.length;i++){
+		x[i].style.color="#000";
+		};
+};
+function setcolor2() {
+	var manuid="2";document.cookie="color=2";
+	for (var i=0;i<mq;i++){
+		var x="mc"+i;
+		console.log(x);
+		document.getElementById(x).className="ml";
+	};
+	var menuid="mc"+manuid;
+	document.getElementById(menuid).className="ml active";
+	for (var i=1;i<cq;i++){
+		var x="class"+i;console.log(x);
+		document.getElementById(x).style.color="#fff";
+		document.getElementById(x).style.background="#000";
+	};
+		var x=document.getElementsByClassName("timelist");
+		for (var i=0;i<x.length;i++){
+			x[i].style.background="#000";x[i].style.color="#fff";
+		};
+};
+</script></head><body>
+<div class="menumain" id="menu" style="display:none" href="javascript:void(0);" onclick="off_menu();"  >
+	<div class="menu" >
+		<div class="menuheader">
+			<div style="height:1.5rem;width: 1.5rem;border-radius:50%;background: #005CC5;color: #fff;font-size:0.75rem;display: flex;box-shadow: 0 3px 4px 0 rgba(0,0,0,0.3);margin: auto 0.5rem;">
+				<div style="margin:auto;">模</div></div>
+			<div style="font-size:1.25rem;">课程表</div>
+		</div>
+			<ul class="menubody">
+				<li id="mc0" class="ml"><a href="javascript:void(0);" onclick="setcolor0();document.cookie='color=0';">花里胡哨</a></li>
+				<li id="mc1" class="ml"><a href="javascript:void(0);" onclick="setcolor1();">只是白</a></li>
+				<li id="mc2" class="ml"><a href="javascript:void(0);" onclick="setcolor2();">特别黑</a></li>
+			</ul>
+		<div class="menufooter" style="display:none;">
+			<a href="https://github.com/ElisaMin/HTML-School-Timetable">在Github上修改此页面</a>
+		</div>
+	</div>
+</div>
+</div>
+<div class="head">
+ <div class="header">
+	<a style="justify-content: flex-end;width: 2rem;" href="javascript:void(0);" onclick="see_menu();" class="menubtn">三</a>
+ <div style="justify-content: center;width: 4rem;">课程表</div>
+ <div style="width: 2rem;"></div>
+</div>
+<div class="tabbar">
+ <a class="tab active" id="see_today" href="javascript:void(0);" onclick="see_today();">今天课程</a>
+ <a class="tab" href="javascript:void(0);" onclick="see_all();" id="see_all">查看全部</a>
+</div>
+</div>
+ <!--<div class="body">
+	<div class="main">
+		<div style="font-size: 0.75rem;">今天是雷阵雨，记得带伞哦。</div>
+	
+	 </div>
+ </div>-->
+<div class="body">
+<div class="main">
+  <div class="day" id="0"></div>
+  <div class="day" id="1"></div>
+  <div class="day" id="2"></div>
+  <div class="day" id="3"></div>
+  <div class="day" id="4"></div>
+  <div class="day" id="5"></div>
+  <div class="day" id="6"></div>
+  <!--上方class="day"的div可删除，用来充数的。-->
+  <div class="day" id="8" style="display:flex !important;">
+  <!--这里的id="X"是指这是星期X。-->
+     <div class="numb">周八</div>
+	 <!--建议在两个字之内-->
+        <div class="time">
+          <div class="timelist">信息1</div>
+		  <!--信息1可以是时间-->
+		  <div class="card" id="class1" >
+		  <!--class1代表第一个课程，如果周一和周四都有同一节课的话请把classX代入进ID。-->
+		   <div class="CardHeader">信息1</div>
+            <div class="place">信息2</div>
+            <div class="name">信息3</div></div>
+		  <div class="card" id="class2" >test</div>
+          <div class="timelist">信息1</div>
+  </div></div>
+ </div></div>
+<!-- 天气插件 -->
+<script type="text/javascript">
+WIDGET = {FID: '4qEVkcIjQW'}
+</script>
+<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+ <footer><script>var d=new Date();var day=d.getDay();console.log("Today's "+day);document.getElementById(day).style.display="flex";setcolor0();</script></body></footer></html>
