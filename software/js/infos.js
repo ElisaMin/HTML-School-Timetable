@@ -21,7 +21,7 @@ let arr = [
 	[5,4,"e","创新创业","段唐文 L1-602"]
 ]
 for (let i = 0;i<arr.length;i++){
-	l(arr[0],arr[1],arr[2],arr[3],arr[4])
+	l(i[0],i[1],i[2],i[3],i[4])
 }
 /*
 l("2","3","a","WEB前端","");
